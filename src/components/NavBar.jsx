@@ -15,7 +15,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link onClick={() => { navigate("/login") }}>Home</Nav.Link>
+                        <Nav.Link onClick={() => { navigate("/") }}>Home</Nav.Link>
                         {isLoggedIn && <>
                             <Nav.Link onClick={() => { navigate("/games") }}>Games</Nav.Link>
                         </>}

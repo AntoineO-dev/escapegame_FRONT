@@ -40,7 +40,7 @@ const isAuthenticated = () => {
 
 // Requête de connexion
 const login = async (email, password) => {
-  const response = await axios.post(`${API_URL}/login`, { email, password });
+  const response = await axios.post(`${API_URL}/auth/login`, { email, password });
   if (response.data.token) {
     setToken(response.data.token);
   }
@@ -49,7 +49,7 @@ const login = async (email, password) => {
 
 // Requête d'inscription
 const register = async (userData) => {
-  return await axios.post(`${API_URL}/register`, userData);
+  return await axios.post(`${API_URL}/auth/register`, userData);
 };
 
 // Déconnexion
