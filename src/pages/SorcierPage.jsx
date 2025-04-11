@@ -1,24 +1,26 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card, Badge, Carousel, Form } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaUserFriends, FaClock, FaStar, FaShieldAlt, FaDragon, FaChessKing } from 'react-icons/fa';
-import trone1 from '../assets/trone.jpeg';
-import trone2 from '../assets/escapetrone.webp';
-import trone3 from '../assets/escapetrone2.jpg';
-import fond from '../assets/fondtronepage.webp';
-import baratheon from '../assets/baratheon.jpg';
-import stark from '../assets/stark.webp';
-import lannister from '../assets/lannister.webp';
-import targaryen from '../assets/targaryen.webp';
 import {
-    GiWolfHead,
-    GiLion,
-    GiDragonHead,
-    GiDeerHead
-} from 'react-icons/gi';
-import '../styles/TronePage.css';
+    FaUser,
+    FaClock,
+    FaStar,
+    FaHatWizard,
+    FaBook,
+    FaWandMagicSparkles,
+    FaFeather
+} from 'react-icons/fa6';
+import fondpotter from '../assets/fondpotter.jpg';
+import potter1 from '../assets/potter1.jpg';
+import potter2 from '../assets/potter2.jpg';
+import potter3 from '../assets/potter3.png';
+import gryffondor from '../assets/gryffondor.webp';
+import poufsouffle from '../assets/poufsouffle.webp';
+import serdaigle from '../assets/serdaigle.webp';
+import serpentard from '../assets/serpentard.webp';
+import '../styles/SorcierPage.css';
 
-const TronePage = () => {
+const SorcierPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
@@ -35,42 +37,43 @@ const TronePage = () => {
 
     // Informations de l'escape game
     const escapeGame = {
-        title: 'Le Trône de Fer',
-        tagline: 'L\'hiver arrive... Saurez-vous conquérir le trône ?',
-        description: 'Plongez dans les intrigues de Westeros et combattez pour conquérir le trône de fer. Déjouez les complots, formez des alliances stratégiques et découvrez les secrets qui se cachent dans l\'ombre du pouvoir. Seuls les plus perspicaces et les plus rusés pourront s\'emparer du Trône de Fer et régner sur les Sept Royaumes.',
-        longDescription: `Le Roi Robert Baratheon est mort, et les Sept Royaumes sont au bord de la guerre civile. En tant que membres d'une des grandes maisons de Westeros, vous êtes convoqués dans la salle du Conseil Restreint où un complot se prépare.
+        title: 'Les Mystères de Poudlard',
+        tagline: 'Votre magie sera-t-elle assez puissante pour résoudre tous les secrets ?',
+        description: 'Plongez dans l\'univers magique d\'Harry Potter et explorez les secrets cachés de Poudlard. Résolvez des énigmes, lancez des sortilèges et découvrez des passages secrets pour accomplir votre mission avant que les forces obscures ne prennent le contrôle de l\'école de sorcellerie.',
+        longDescription: `Une mystérieuse menace plane sur Poudlard. Des artefacts magiques essentiels à l'école ont disparu, et les protections magiques commencent à s'affaiblir. En tant que nouveaux étudiants prometteurs, vous êtes convoqués par le directeur qui vous confie une mission cruciale.
 
-        Votre mission: retrouver les preuves cachées dans le château qui détermineront le véritable héritier du trône. Mais attention, les espions de la Couronne vous surveillent, et vous n'avez qu'une heure avant que les gardes ne reviennent.
+        Votre tâche : explorer la Salle sur Demande qui s'est transformée en dédale d'énigmes représentant les différentes parties du château. Vous devez retrouver les artefacts perdus et déjouer le complot avant que l'heure ne soit écoulée et que Poudlard ne soit vulnérable à une attaque.
         
-        Résolvez des énigmes inspirées de l'univers de Game of Thrones, découvrez des passages secrets, déchiffrez d'anciens parchemins et évitez les pièges mortels. Chaque maison possède des compétences uniques - saurez-vous les utiliser à bon escient?`,
-        difficulty: 4,
-        players: '2-6',
-        duration: 90,
-        successRate: '32%',
+        Faites bon usage de vos baguettes magiques, consultez grimoires anciens et potions, et surtout, restez sur vos gardes. Les tableaux parlants vous donneront des indices, mais méfiez-vous des fausses pistes. Chaque maison possède des compétences particulières - utilisez-les judicieusement pour triompher.`,
+        difficulty: 3,
+        players: '3-8',
+        duration: 60,
+        successRate: '40%',
         images: [
-            trone1,
-            trone2,
-            trone3,
+            potter1,
+            potter2,
+            potter3
+
         ],
         challenges: [
-            'Énigmes cryptographiques basées sur les blasons des maisons',
-            'Mécanismes cachés inspirés des intrigues de la cour',
-            'Puzzles stratégiques rappelant les batailles historiques',
-            'Reconstitution d\'artefacts anciens des Sept Royaumes'
+            'Déchiffrer des sortilèges anciens dans la bibliothèque',
+            'Préparer une potion magique aux effets surprenants',
+            'Résoudre les énigmes mouvantes de l\'escalier principal',
+            'Identifier les symboles cachés dans la Salle des Trophées'
         ],
         houses: [
-            { name: 'Stark', trait: 'Honneur et persévérance', image: stark },
-            { name: 'Baratheon', trait: 'Force et loyauté', image: baratheon },
-            { name: 'Lannister', trait: 'Richesse et influence', image: lannister },
-            { name: 'Targaryen', trait: 'Pouvoir et ambition', image: targaryen }
+            { name: 'Gryffondor', trait: 'Courage et bravoure', icon: 'lion' },
+            { name: 'Poufsouffle', trait: 'Loyauté et persévérance', icon: 'badger' },
+            { name: 'Serdaigle', trait: 'Intelligence et créativité', icon: 'eagle' },
+            { name: 'Serpentard', trait: 'Ambition et ruse', icon: 'snake' }
         ]
     };
 
     return (
-        <div className="trone-page">
+        <div className="sorcier-page">
             {/* Hero Section */}
-            <section className="trone-hero">
-                <div className="trone-hero-overlay">
+            <section className="sorcier-hero" >
+                <div className="sorcier-hero-overlay">
                     <Container>
                         <motion.div
                             initial="hidden"
@@ -82,7 +85,7 @@ const TronePage = () => {
                             <p className="tagline">{escapeGame.tagline}</p>
                             <div className="d-flex justify-content-center game-meta">
                                 <div className="meta-item">
-                                    <FaUserFriends />
+                                    <FaUser />
                                     <span>{escapeGame.players} joueurs</span>
                                 </div>
                                 <div className="meta-item">
@@ -110,32 +113,33 @@ const TronePage = () => {
             {/* Introduction Section */}
             <section className="game-intro py-5">
                 <Container>
-                    <motion.div  
+                    <motion.div
+                       
                     >
                         <Row className="align-items-center">
                             <Col lg={6} className="mb-4 mb-lg-0">
                                 <div className="game-description">
-                                    <h2>L'aventure vous attend</h2>
+                                    <h2>Bienvenue à Poudlard</h2>
                                     <div className="separator"></div>
                                     <p className="lead">{escapeGame.description}</p>
                                     <p>{escapeGame.longDescription}</p>
                                     <div className="game-stats d-flex flex-wrap">
                                         <div className="stat-item">
-                                            <FaShieldAlt className="stat-icon" />
+                                            <FaHatWizard className="stat-icon" />
                                             <div>
-                                                <h4>Niveau</h4>
-                                                <p>Confirmé</p>
+                                                <h4>Magie</h4>
+                                                <p>Avancée</p>
                                             </div>
                                         </div>
                                         <div className="stat-item">
-                                            <FaChessKing className="stat-icon" />
+                                            <FaWandMagicSparkles className="stat-icon" />
                                             <div>
-                                                <h4>Stratégie</h4>
-                                                <p>Indispensable</p>
+                                                <h4>Sortilèges</h4>
+                                                <p>Essentiels</p>
                                             </div>
                                         </div>
                                         <div className="stat-item">
-                                            <FaDragon className="stat-icon" />
+                                            <FaBook className="stat-icon" />
                                             <div>
                                                 <h4>Taux de réussite</h4>
                                                 <p>{escapeGame.successRate}</p>
@@ -173,18 +177,33 @@ const TronePage = () => {
                     >
                         <h2 className="text-center">Choisissez votre maison</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Chaque maison de Westeros possède des traits uniques qui influenceront votre expérience</p>
+                        <p className="text-center mb-5">Chaque maison de Poudlard possède des qualités uniques qui influenceront votre approche</p>
 
                         <Row>
                             {escapeGame.houses.map((house, index) => (
                                 <Col md={3} sm={6} className="mb-4" key={index}>
                                     <Card className="house-card text-center h-100">
                                         <div className="house-image-container">
-                                            <img
-                                                src={house.image}
-                                                alt={`Blason ${house.name}`}
-                                                className="house-image"
-                                            />
+                                            {house.icon === 'lion' && (
+                                                <div className="house-color gryffindor">
+                                                    <img src={gryffondor} alt="Emblème Gryffondor" className="house-emblem-img" />
+                                                </div>
+                                            )}
+                                            {house.icon === 'badger' && (
+                                                <div className="house-color hufflepuff">
+                                                    <img src={poufsouffle} alt="Emblème Poufsouffle" className="house-emblem-img" />
+                                                </div>
+                                            )}
+                                            {house.icon === 'eagle' && (
+                                                <div className="house-color ravenclaw">
+                                                    <img src={serdaigle} alt="Emblème Serdaigle" className="house-emblem-img" />
+                                                </div>
+                                            )}
+                                            {house.icon === 'snake' && (
+                                                <div className="house-color slytherin">
+                                                    <img src={serpentard} alt="Emblème Serpentard" className="house-emblem-img" />
+                                                </div>
+                                            )}
                                         </div>
                                         <Card.Body>
                                             <Card.Title>Maison {house.name}</Card.Title>
@@ -207,9 +226,9 @@ const TronePage = () => {
                         viewport={{ once: true }}
                         variants={fadeIn}
                     >
-                        <h2 className="text-center">Les défis qui vous attendent</h2>
+                        <h2 className="text-center">Les épreuves magiques</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Préparez-vous à affronter ces épreuves pour conquérir le trône</p>
+                        <p className="text-center mb-5">Maîtrisez ces défis pour sauver Poudlard et devenir de véritables sorciers</p>
 
                         <Row className="justify-content-center">
                             {escapeGame.challenges.map((challenge, index) => (
@@ -238,7 +257,7 @@ const TronePage = () => {
                     >
                         <h2 className="text-center">Réserver votre session</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Choisissez une date et une heure pour votre aventure</p>
+                        <p className="text-center mb-5">Le Choixpeau vous attend, sélectionnez une date pour votre aventure</p>
 
                         <Row className="justify-content-center">
                             <Col md={8}>
@@ -259,7 +278,7 @@ const TronePage = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Nombre de participants</Form.Label>
+                                                        <Form.Label>Nombre d'élèves</Form.Label>
                                                         <Form.Control
                                                             type="number"
                                                             min="2"
@@ -313,8 +332,8 @@ const TronePage = () => {
                         variants={fadeIn}
                         className="text-center"
                     >
-                        <h2>Prêt à conquérir le Trône de Fer ?</h2>
-                        <p className="lead mb-4">L'hiver approche, et seuls les plus stratèges survivront...</p>
+                        <h2>Prêt à entrer dans l'école de magie ?</h2>
+                        <p className="lead mb-4">Les mystères de Poudlard n'attendent que vous...</p>
                         <Button
                             variant="light"
                             size="lg"
@@ -333,4 +352,4 @@ const TronePage = () => {
     );
 }
 
-export default TronePage;
+export default SorcierPage;

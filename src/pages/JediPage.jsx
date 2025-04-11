@@ -112,10 +112,6 @@ const JediPage = () => {
             <section className="game-intro py-5">
                 <Container>
                     <motion.div
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true }}
-                        variants={fadeIn}
                     >
                         <Row className="align-items-center">
                             <Col lg={6} className="mb-4 mb-lg-0">

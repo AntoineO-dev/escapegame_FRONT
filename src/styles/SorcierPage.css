@@ -1,0 +1,447 @@
+/* Styles généraux pour la page Mystères de Poudlard */
+:root {
+  --primary-color: #0b2852; /* Bleu marine */
+  --secondary-color: #1a3c7d;
+  --accent-color: #740001; /* Rouge Gryffondor comme accent */
+  --gold-color: #d3a625; /* Or pour les détails */
+  --dark-color: #122236;
+  --light-color: #f8fafc;
+  --gray-color: #6c757d;
+  
+  /* Variables spécifiques à Harry Potter */
+  --hufflepuff-yellow: #ffdb00;
+  --hufflepuff-black: #000;
+  --ravenclaw-blue: #0e1a40;
+  --ravenclaw-bronze: #946b2d;
+  --slytherin-green: #1a472a;
+  --slytherin-silver: #aaaaaa;
+  --gryffindor-red: #740001;
+  --gryffindor-gold: #d3a625;
+}
+
+.sorcier-page {
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Section */
+.sorcier-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  background-image: url('../assets/fondpotter.jpg');
+  background-size: cover;
+  background-position: center top;
+  color: white;
+}
+
+.sorcier-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(11, 40, 82, 0.8), rgba(11, 40, 82, 0.7)); /* Bleu marine cohérent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.hero-content .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.game-meta {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  color: var(--light-color);
+}
+
+.meta-item svg {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  color: var(--gold-color);
+}
+
+.book-now-btn {
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  background-color: var(--gold-color);
+  color: var(--dark-color);
+  transition: all 0.3s;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--gold-color);
+}
+
+/* Game Introduction Section */
+.game-intro {
+  background-color: var(--light-color);
+  padding: 80px 0;
+}
+
+.game-description h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.game-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.game-description .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.game-stats {
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 15px;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-right: 15px;
+  color: var(--primary-color);
+}
+
+.stat-item h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #666;
+}
+
+.stat-item p {
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.game-carousel {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.game-carousel img {
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Houses Section */
+.houses-section {
+  background-color: #f8f9fa;
+  background-image: url('/images/parchment-bg.jpg');
+  background-size: cover;
+  position: relative;
+  padding: 80px 0;
+}
+
+.houses-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 0;
+}
+
+.houses-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.house-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.house-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.house-image-container {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.house-color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.house-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+  z-index: 2;
+}
+
+.house-card:hover .house-emblem-img {
+  transform: scale(1.15);
+}
+
+/* Conserver les couleurs spécifiques des maisons */
+.gryffindor {
+  background: linear-gradient(135deg, var(--gryffindor-red) 50%, var(--gryffindor-gold) 50%);
+}
+
+.hufflepuff {
+  background: linear-gradient(135deg, var(--hufflepuff-yellow) 50%, var(--hufflepuff-black) 50%);
+}
+
+.ravenclaw {
+  background: linear-gradient(135deg, var(--ravenclaw-blue) 50%, var(--ravenclaw-bronze) 50%);
+}
+
+.slytherin {
+  background: linear-gradient(135deg, var(--slytherin-green) 50%, var(--slytherin-silver) 50%);
+}
+
+.house-card .card-body {
+  padding: 20px;
+}
+
+.house-card .card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.house-card .card-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Challenges Section */
+.challenges-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.challenge-item {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 100%;
+}
+
+.challenge-number {
+  width: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-description {
+  padding: 20px;
+  flex: 1;
+}
+
+.challenge-description h4 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.challenge-description p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+/* Booking Section */
+.booking-section {
+  background-color: #f8f9fa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.booking-section.show {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 80px 0;
+}
+
+.booking-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card .card-body {
+  padding: 30px;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time-slot-badge {
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  transition: all 0.2s ease;
+}
+
+.time-slot-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 80px 0;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-family: 'Cinzel Decorative', serif;
+}
+
+.cta-section .lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .sorcier-hero {
+    height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .sorcier-hero {
+    height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .stat-item {
+    width: 100%;
+  }
+  
+  .game-carousel img {
+    height: 300px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .meta-item {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+}
