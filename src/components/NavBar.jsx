@@ -15,8 +15,7 @@ const NavBar = () => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link onClick={() => { navigate("/") }}>Accueil</Nav.Link>
-                        <NavDropdown title="Escape Games en salle" id="basic-nav-dropdown">
+                        <NavDropdown title="Nos Escape Games" id="basic-nav-dropdown">
                             <NavDropdown.Item onClick={() => { navigate("/trone") }}>Le Trône de Fer</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => { navigate("/jedi") }}>La Quête du Jedi</NavDropdown.Item>
                             <NavDropdown.Item onClick={() => { navigate("/sorcier") }}>L'Epreuve des Sorciers</NavDropdown.Item>

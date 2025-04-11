@@ -14,6 +14,7 @@ import TronePage from "./pages/TronePage";
 import JediPage from "./pages/JediPage";
 import SorcierPage from "./pages/SorcierPage";
 import WarcraftPage from "./pages/WarcraftPage";
+import LegendPage from "./pages/LegendPage";
 
 function App() {
     // Modifiez cette ligne pour utiliser le nom correct de la fonction
@@ -34,6 +35,7 @@ function App() {
                     <Route path="/jedi" element={<JediPage/>} />
                     <Route path="/sorcier" element={<SorcierPage/>} />
                     <Route path="/Azeroth" element={<WarcraftPage/>} />
+                    <Route path="/legende" element={<LegendPage/>} />
                 </Routes>
                 <ToastContainer
                 position = "bottom-right"
