@@ -1,0 +1,480 @@
+/* Styles généraux pour la page World of Warcraft */
+:root {
+  --primary-color: #0b2852; /* Bleu marine - même que les autres pages */
+  --secondary-color: #1a3c7d;
+  --accent-color: #8b0000; /* Rouge sang pour l'univers Warcraft */
+  --gold-color: #ffd700; /* Or pour les détails */
+  --dark-color: #122236;
+  --light-color: #f8fafc;
+  --gray-color: #6c757d;
+  
+  /* Variables spécifiques à Warcraft */
+  --alliance-blue: #1a64d6;
+  --horde-red: #b30000;
+  --night-elf-purple: #7752b3;
+  --undead-green: #2c6043;
+}
+
+.warcraft-page {
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-bottom: 1.5rem;
+}
+
+/* Hero Section */
+.warcraft-hero {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+    background-image: url('../assets/wowwallpaper.jpg');
+    background-size: cover;
+    background-position: center top;
+    color: white;
+}
+
+.warcraft-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(11, 40, 82, 0.8), rgba(11, 40, 82, 0.7)); /* Bleu marine cohérent */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content .tagline {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.game-meta {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  color: var(--light-color);
+}
+
+.meta-item svg {
+  margin-right: 8px;
+  font-size: 1.2rem;
+  color: var(--gold-color);
+}
+
+.book-now-btn {
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  background-color: var(--gold-color);
+  color: var(--dark-color);
+  transition: all 0.3s;
+}
+
+.book-now-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--gold-color);
+}
+
+/* Game Introduction Section */
+.game-intro {
+  background-color: var(--light-color);
+  padding: 80px 0;
+}
+
+.game-description h2 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.game-description p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.game-description .lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.game-stats {
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 15px;
+}
+
+.stat-icon {
+  font-size: 2.5rem;
+  margin-right: 15px;
+  color: var(--primary-color);
+}
+
+.stat-item h4 {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  color: #666;
+}
+
+.stat-item p {
+  font-weight: 600;
+  margin-bottom: 0;
+  font-size: 1.1rem;
+}
+
+.game-carousel {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.game-carousel img {
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Factions Section */
+.factions-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+  position: relative;
+  background-image: url('../assets/warcraft-parchment.jpg');
+  background-size: cover;
+}
+
+.faction-card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faction-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.faction-image-container {
+  height: 180px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faction-color {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.alliance {
+  background-color: var(--alliance-blue);
+}
+
+.horde {
+  background-color: var(--horde-red);
+}
+
+.night-elf {
+  background-color: var(--night-elf-purple);
+}
+
+.undead {
+  background-color: var(--undead-green);
+}
+
+.faction-emblem-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+}
+
+.faction-card:hover .faction-emblem-img {
+  transform: scale(1.15);
+}
+
+.faction-card .card-body {
+  padding: 20px;
+}
+
+.faction-card .card-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.faction-card .card-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Challenges Section */
+.challenges-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
+
+.challenge-item {
+  display: flex;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  height: 100%;
+}
+
+.challenge-number {
+  width: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-description {
+  padding: 20px;
+  flex: 1;
+}
+
+.challenge-description h4 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.challenge-description p {
+  margin-bottom: 0;
+  color: #555;
+}
+
+/* Booking Section */
+.booking-section {
+  background-color: #f8f9fa;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.booking-section.show {
+  max-height: 1000px;
+  opacity: 1;
+  padding: 80px 0;
+}
+
+.booking-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.booking-card .card-body {
+  padding: 30px;
+}
+
+.time-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.time-slot-badge {
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 8px 15px;
+  transition: all 0.2s ease;
+}
+
+.time-slot-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #f8f9fa;
+  padding: 80px 0;
+}
+
+.review-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.review-stars {
+  color: var(--gold-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.review-content {
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-size: cover;
+  background-position: center;
+}
+
+.alliance-avatar {
+  background-color: var(--alliance-blue);
+  background-image: url('../assets/alliance-avatar.jpg');
+}
+
+.horde-avatar {
+  background-color: var(--horde-red);
+  background-image: url('../assets/horde-avatar.jpg');
+}
+
+.night-elf-avatar {
+  background-color: var(--night-elf-purple);
+  background-image: url('../assets/night-elf-avatar.jpg');
+}
+
+.review-author p {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 80px 0;
+}
+
+.cta-section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.cta-section .lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+/* Button Styles */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn-outline-light:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .warcraft-hero {
+    height: 70vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content .tagline {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .warcraft-hero {
+    height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .stat-item {
+    width: 100%;
+  }
+  
+  .game-carousel img {
+    height: 300px;
+  }
+  
+  .cta-section h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  
+  .meta-item {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+}
