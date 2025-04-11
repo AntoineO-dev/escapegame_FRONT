@@ -15,6 +15,7 @@ import {
 import starwars4 from '../assets/starwars4.jpg';
 import starwars2 from '../assets/starwars2.jpg';
 import starwars3 from '../assets/starwars3.webp';
+import fondjedi from '../assets/fondjedipage.jpeg';
 import '../styles/JediPage.css';
 
 const JediPage = () => {
