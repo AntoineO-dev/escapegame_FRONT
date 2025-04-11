@@ -42,7 +42,7 @@ const WarcraftPage = () => {
         Votre équipe d'aventuriers représente l'élite des forces de votre faction. Vous devez naviguer à travers les défenses anciennes, déchiffrer des runes elfiques, éviter les pièges mortels et affronter des énigmes qui mettront à l'épreuve votre sagesse et votre courage.
         
         Le temps presse : le portail magique ne restera ouvert que 60 minutes. Si vous échouez, non seulement vous serez piégés pour l'éternité, mais l'équilibre des forces sur Azeroth sera irrémédiablement bouleversé.`,
-        difficulty: 4,
+        difficulty: 3,
         players: '2-8',
         duration: 40,
         successRate: '35%',

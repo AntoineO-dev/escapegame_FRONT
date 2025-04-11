@@ -11,7 +11,7 @@ const NavBar = () => {
     return <>
         <Navbar expand="lg" bg="dark" variant="dark">
             <Container fluid className="d-flex justify-content-between">
-                <Navbar.Brand onClick={() => { navigate("/") }}>Enigme Evadée</Navbar.Brand>
+                <Navbar.Brand onClick={() => { navigate("/") }} className="enigme">Enigme Evadée</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
