@@ -1,15 +1,15 @@
-/* Styles généraux pour la page Trône de Fer */
+/* Styles généraux pour la page Quête du Jedi */
 :root {
     --primary-color: #0b2852; /* Bleu marine */
     --secondary-color: #1a3c7d;
-    --accent-color: #c0392b; /* Rouge Lannister */
-    --gold-color: #d4af37; /* Or pour les détails */
+    --accent-color: #2ecc71; /* Vert sabre laser */
+    --gold-color: #f1c40f; /* Jaune pour les étoiles */
     --dark-color: #122236;
     --light-color: #f8fafc;
     --gray-color: #6c757d;
   }
   
-  .trone-page {
+  .jedi-page {
     color: #333;
     font-family: 'Poppins', sans-serif;
   }
@@ -22,18 +22,17 @@
   }
   
   /* Hero Section */
-  .trone-hero {
+  .jedi-hero {
     position: relative;
     height: 80vh;
     min-height: 500px;
-    /* Utilisez l'image importée comme fond */
-    background-image: url('../assets/fondtronepage.webp');
+    background-image: url('/images/jedi-temple-bg.jpg');
     background-size: cover;
     background-position: center;
     color: white;
   }
   
-  .trone-hero-overlay {
+  .jedi-hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -158,26 +157,26 @@
     object-fit: cover;
   }
   
-  /* Houses Section */
-  .houses-section {
+  /* Factions Section */
+  .factions-section {
     background-color: white;
     position: relative;
   }
   
-  .houses-section::before {
+  .factions-section::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     height: 200px;
-    background-image: url('/images/houses-banner.jpg');
+    background-image: url('/images/stars-bg.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.1;
   }
   
-  .house-card {
+  .faction-card {
     border: none;
     border-radius: 10px;
     overflow: hidden;
@@ -185,33 +184,37 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  .house-card:hover {
+  .faction-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
   }
   
-  .house-image-container {
-    height: 200px; /* Hauteur augmentée pour plus de présence */
-    overflow: hidden;
+  .faction-icon {
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent; /* Suppression de la couleur de fond bleue */
+    color: white;
+    font-size: 3rem;
   }
-
-  .house-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Changé de 'contain' à 'cover' pour remplir tout l'espace */
-    padding: 0; /* Suppression du padding qui créait un espace */
-    transition: transform 0.3s ease;
+  .faction-icon-jedi {
+    background-color: #2ecc71; /* Vert pour les Jedi */
   }
-
-.house-card:hover .house-image {
-    transform: scale(1.1);
-}
   
-  .house-card .card-title {
+  
+  .faction-icon-rebel {
+    background-color: #e74c3c; /* Rouge pour les Rebelles */
+  }
+  
+  .faction-icon-helmet {
+    background-color: #7f8c8d; /* Gris pour les Mandaloriens */
+  }
+  
+  .faction-icon-ship {
+    background-color: #f39c12; /* Jaune pour les contrebandiers */
+  }
+  
+  .faction-card .card-title {
     color: var(--primary-color);
     font-weight: 600;
     margin-top: 10px;
@@ -316,7 +319,7 @@
   }
   
   .review-stars {
-    color: #f39c12;
+    color: #f39c12; /* Jaune doré pour les étoiles */
     margin-bottom: 15px;
     font-size: 1.1rem;
   }
@@ -382,7 +385,7 @@
   
   /* Responsive Design */
   @media (max-width: 992px) {
-    .trone-hero {
+    .jedi-hero {
       height: 70vh;
     }
     
@@ -396,7 +399,7 @@
   }
   
   @media (max-width: 768px) {
-    .trone-hero {
+    .jedi-hero {
       height: 60vh;
     }
     

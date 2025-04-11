@@ -1,24 +1,23 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Button, Card, Badge, Carousel, Form } from 'react-bootstrap';
 import { motion } from 'framer-motion';
-import { FaUserFriends, FaClock, FaStar, FaShieldAlt, FaDragon, FaChessKing } from 'react-icons/fa';
-import trone1 from '../assets/trone.jpeg';
-import trone2 from '../assets/escapetrone.webp';
-import trone3 from '../assets/escapetrone2.jpg';
-import fond from '../assets/fondtronepage.webp';
-import baratheon from '../assets/baratheon.jpg';
-import stark from '../assets/stark.webp';
-import lannister from '../assets/lannister.webp';
-import targaryen from '../assets/targaryen.webp';
 import {
-    GiWolfHead,
-    GiLion,
-    GiDragonHead,
-    GiDeerHead
-} from 'react-icons/gi';
-import '../styles/TronePage.css';
+    FaUserFriends,
+    FaClock,
+    FaStar,
+    FaJedi,
+    FaRocket,
+    FaLightbulb,
+    FaShieldAlt,
+    FaGalacticRepublic,
+    FaEmpire
+} from 'react-icons/fa';
+import starwars4 from '../assets/starwars4.jpg';
+import starwars2 from '../assets/starwars2.jpg';
+import starwars3 from '../assets/starwars3.webp';
+import '../styles/JediPage.css';
 
-const TronePage = () => {
+const JediPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
@@ -35,42 +34,43 @@ const TronePage = () => {
 
     // Informations de l'escape game
     const escapeGame = {
-        title: 'Le Trône de Fer',
-        tagline: 'L\'hiver arrive... Saurez-vous conquérir le trône ?',
-        description: 'Plongez dans les intrigues de Westeros et combattez pour conquérir le trône de fer. Déjouez les complots, formez des alliances stratégiques et découvrez les secrets qui se cachent dans l\'ombre du pouvoir. Seuls les plus perspicaces et les plus rusés pourront s\'emparer du Trône de Fer et régner sur les Sept Royaumes.',
-        longDescription: `Le Roi Robert Baratheon est mort, et les Sept Royaumes sont au bord de la guerre civile. En tant que membres d'une des grandes maisons de Westeros, vous êtes convoqués dans la salle du Conseil Restreint où un complot se prépare.
+        title: 'La Quête du Jedi',
+        tagline: 'Que la Force soit avec vous... Parviendrez-vous à accomplir votre destin ?',
+        description: 'Plongez dans l\'univers de Star Wars et embarquez dans une quête épique pour devenir un véritable Jedi. Maîtrisez la Force, résolvez des énigmes anciennes et affrontez vos peurs intérieures pour restaurer la paix dans la galaxie et empêcher la montée de l\'Empire.',
+        longDescription: `Les forces obscures gagnent du terrain dans la galaxie. En tant que padawans prometteurs, vous êtes envoyés dans un temple Jedi abandonné où se trouve un holocron ancien contenant des connaissances cruciales pour combattre l'Empire naissant.
 
-        Votre mission: retrouver les preuves cachées dans le château qui détermineront le véritable héritier du trône. Mais attention, les espions de la Couronne vous surveillent, et vous n'avez qu'une heure avant que les gardes ne reviennent.
+        Votre mission: résoudre les épreuves du temple pour accéder à l'holocron tout en évitant les pièges laissés par les Sith. Mais attention, le temple est instable et pourrait s'effondrer dans une heure, vous piégeant à jamais.
         
-        Résolvez des énigmes inspirées de l'univers de Game of Thrones, découvrez des passages secrets, déchiffrez d'anciens parchemins et évitez les pièges mortels. Chaque maison possède des compétences uniques - saurez-vous les utiliser à bon escient?`,
-        difficulty: 4,
-        players: '2-6',
-        duration: 90,
-        successRate: '32%',
+        Explorez des salles mystérieuses inspirées de la saga Star Wars, utilisez la Force pour résoudre des puzzles complexes, et prouvez votre valeur en tant que futurs gardiens de la paix galactique. Chaque décision affectera votre parcours vers le côté lumineux... ou obscur de la Force.`,
+        difficulty: 3,
+        players: '2-4',
+        duration: 60,
+        successRate: '45%',
         images: [
-            trone1,
-            trone2,
-            trone3,
+            starwars4,
+            starwars2,
+            starwars3
+
         ],
         challenges: [
-            'Énigmes cryptographiques basées sur les blasons des maisons',
-            'Mécanismes cachés inspirés des intrigues de la cour',
-            'Puzzles stratégiques rappelant les batailles historiques',
-            'Reconstitution d\'artefacts anciens des Sept Royaumes'
+            'Manipulation de la Force pour résoudre des puzzles environnementaux',
+            'Déchiffrage de messages codés en langue Aurebesh',
+            'Construction d\'un sabre laser fonctionnel',
+            'Programmation d\'un droïde pour accéder à des zones inaccessibles'
         ],
-        houses: [
-            { name: 'Stark', trait: 'Honneur et persévérance', image: stark },
-            { name: 'Baratheon', trait: 'Force et loyauté', image: baratheon },
-            { name: 'Lannister', trait: 'Richesse et influence', image: lannister },
-            { name: 'Targaryen', trait: 'Pouvoir et ambition', image: targaryen }
+        factions: [
+            { name: 'Jedi', trait: 'Sagesse et discipline', icon: 'jedi' },
+            { name: 'Rebelles', trait: 'Courage et détermination', icon: 'rebel' },
+            { name: 'Mandaloriens', trait: 'Honneur et habileté', icon: 'helmet' },
+            { name: 'Contrebandiers', trait: 'Astuce et adaptabilité', icon: 'ship' }
         ]
     };
 
     return (
-        <div className="trone-page">
+        <div className="jedi-page">
             {/* Hero Section */}
-            <section className="trone-hero">
-                <div className="trone-hero-overlay">
+            <section className="jedi-hero">
+                <div className="jedi-hero-overlay">
                     <Container>
                         <motion.div
                             initial="hidden"
@@ -119,27 +119,27 @@ const TronePage = () => {
                         <Row className="align-items-center">
                             <Col lg={6} className="mb-4 mb-lg-0">
                                 <div className="game-description">
-                                    <h2>L'aventure vous attend</h2>
+                                    <h2>La formation du Jedi commence</h2>
                                     <div className="separator"></div>
                                     <p className="lead">{escapeGame.description}</p>
                                     <p>{escapeGame.longDescription}</p>
                                     <div className="game-stats d-flex flex-wrap">
                                         <div className="stat-item">
-                                            <FaShieldAlt className="stat-icon" />
+                                            <FaJedi className="stat-icon" />
                                             <div>
-                                                <h4>Niveau</h4>
-                                                <p>Confirmé</p>
+                                                <h4>Combat</h4>
+                                                <p>Intermédiaire</p>
                                             </div>
                                         </div>
                                         <div className="stat-item">
-                                            <FaChessKing className="stat-icon" />
+                                            <FaGalacticRepublic className="stat-icon" />
                                             <div>
-                                                <h4>Stratégie</h4>
-                                                <p>Indispensable</p>
+                                                <h4>Usage de la Force</h4>
+                                                <p>Essentiel</p>
                                             </div>
                                         </div>
                                         <div className="stat-item">
-                                            <FaDragon className="stat-icon" />
+                                            <FaEmpire className="stat-icon" />
                                             <div>
                                                 <h4>Taux de réussite</h4>
                                                 <p>{escapeGame.successRate}</p>
@@ -166,8 +166,8 @@ const TronePage = () => {
                 </Container>
             </section>
 
-            {/* Houses Section */}
-            <section className="houses-section py-5">
+            {/* Factions Section */}
+            <section className="factions-section py-5">
                 <Container>
                     <motion.div
                         initial="hidden"
@@ -175,24 +175,23 @@ const TronePage = () => {
                         viewport={{ once: true }}
                         variants={fadeIn}
                     >
-                        <h2 className="text-center">Choisissez votre maison</h2>
+                        <h2 className="text-center">Choisissez votre faction</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Chaque maison de Westeros possède des traits uniques qui influenceront votre expérience</p>
+                        <p className="text-center mb-5">Chaque faction galactique possède des compétences uniques qui influenceront votre approche</p>
 
                         <Row>
-                            {escapeGame.houses.map((house, index) => (
+                            {escapeGame.factions.map((faction, index) => (
                                 <Col md={3} sm={6} className="mb-4" key={index}>
-                                    <Card className="house-card text-center h-100">
-                                        <div className="house-image-container">
-                                            <img
-                                                src={house.image}
-                                                alt={`Blason ${house.name}`}
-                                                className="house-image"
-                                            />
+                                    <Card className="faction-card text-center h-100">
+                                        <div className={`faction-icon faction-icon-${faction.icon}`}>
+                                            {faction.icon === 'jedi' && <FaJedi size={48} />}
+                                            {faction.icon === 'rebel' && <FaGalacticRepublic size={48} />}
+                                            {faction.icon === 'helmet' && <FaShieldAlt size={48} />}
+                                            {faction.icon === 'ship' && <FaRocket size={48} />}
                                         </div>
                                         <Card.Body>
-                                            <Card.Title>Maison {house.name}</Card.Title>
-                                            <Card.Text>{house.trait}</Card.Text>
+                                            <Card.Title>Les {faction.name}</Card.Title>
+                                            <Card.Text>{faction.trait}</Card.Text>
                                         </Card.Body>
                                     </Card>
                                 </Col>
@@ -211,9 +210,9 @@ const TronePage = () => {
                         viewport={{ once: true }}
                         variants={fadeIn}
                     >
-                        <h2 className="text-center">Les défis qui vous attendent</h2>
+                        <h2 className="text-center">Les épreuves Jedi</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Préparez-vous à affronter ces épreuves pour conquérir le trône</p>
+                        <p className="text-center mb-5">Maîtrisez ces défis pour prouver que vous êtes dignes du titre de Jedi</p>
 
                         <Row className="justify-content-center">
                             {escapeGame.challenges.map((challenge, index) => (
@@ -221,7 +220,7 @@ const TronePage = () => {
                                     <div className="challenge-item">
                                         <div className="challenge-number">{index + 1}</div>
                                         <div className="challenge-description">
-                                            <h4>Défi {index + 1}</h4>
+                                            <h4>Épreuve {index + 1}</h4>
                                             <p>{challenge}</p>
                                         </div>
                                     </div>
@@ -240,9 +239,9 @@ const TronePage = () => {
                         animate={showBookingForm ? "visible" : "hidden"}
                         variants={fadeIn}
                     >
-                        <h2 className="text-center">Réserver votre session</h2>
+                        <h2 className="text-center">Réserver votre mission</h2>
                         <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Choisissez une date et une heure pour votre aventure</p>
+                        <p className="text-center mb-5">Le Conseil Jedi vous attend, choisissez quand vous présenter</p>
 
                         <Row className="justify-content-center">
                             <Col md={8}>
@@ -263,11 +262,11 @@ const TronePage = () => {
                                                 </Col>
                                                 <Col md={6}>
                                                     <Form.Group className="mb-3">
-                                                        <Form.Label>Nombre de participants</Form.Label>
+                                                        <Form.Label>Nombre de padawans</Form.Label>
                                                         <Form.Control
                                                             type="number"
                                                             min="2"
-                                                            max="6"
+                                                            max="5"
                                                             value={participants}
                                                             onChange={(e) => setParticipants(e.target.value)}
                                                             required
@@ -307,6 +306,7 @@ const TronePage = () => {
                 </Container>
             </section>
 
+
             {/* Call to Action */}
             <section className="cta-section py-5">
                 <Container>
@@ -317,8 +317,8 @@ const TronePage = () => {
                         variants={fadeIn}
                         className="text-center"
                     >
-                        <h2>Prêt à conquérir le Trône de Fer ?</h2>
-                        <p className="lead mb-4">L'hiver approche, et seuls les plus stratèges survivront...</p>
+                        <h2>Prêt à débuter votre formation Jedi ?</h2>
+                        <p className="lead mb-4">Que la Force soit avec vous dans cette aventure galactique...</p>
                         <Button
                             variant="light"
                             size="lg"
@@ -337,4 +337,4 @@ const TronePage = () => {
     );
 }
 
-export default TronePage;
+export default JediPage;
