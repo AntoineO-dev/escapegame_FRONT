@@ -36,8 +36,9 @@
   position: relative;
   height: 80vh;
   min-height: 500px;
+  background-image: url('../assets/lol.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   color: white;
 }
 
@@ -230,24 +231,24 @@
 
 /* Couleurs spécifiques pour chaque région */
 .demacia {
-  background: linear-gradient(135deg, var(--demacia-blue), #0a6b8a);
+  background: linear-gradient(135deg, var(--demacia-blue), black  );
 }
 
 .noxus {
-  background: linear-gradient(135deg, var(--noxus-red), #7c241b);
+  background: linear-gradient(135deg, var(--noxus-red), black );
 }
 
 .ionia {
-  background: linear-gradient(135deg, var(--ionia-pink), #9c2ca1);
+  background: linear-gradient(135deg, var(--ionia-pink), black);
 }
 
 .piltover {
-  background: linear-gradient(135deg, var(--piltover-yellow), #d99f19);
+  background: linear-gradient(135deg, var(--piltover-yellow), black);
 }
 
 .region-emblem-img {
   width: 60%;
-  height: 60%;
+  height: 80%;
   object-fit: contain;
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
   transition: transform 0.3s ease;

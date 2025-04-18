@@ -11,6 +11,14 @@ import {
     FaTrophy,
     
 } from 'react-icons/fa';
+import lol from '../assets/lol.jpg';
+import lol1 from '../assets/lol1.jpg';
+import lol2 from '../assets/lol2.avif';
+import lol3 from '../assets/lol3.jpg';
+import demacia from '../assets/demacia.png';
+import noxus from '../assets/Noxus.png';
+import ionia from '../assets/ionia.png';
+import piltover from '../assets/piltover.webp';
 import '../styles/LegendPage.css';
 
 const LegendPage = () => {
@@ -43,7 +51,9 @@ const LegendPage = () => {
         duration: 60,
         successRate: '40%',
         images: [
-            
+            lol1,
+            lol2,
+            lol3
         ],
         challenges: [
             'Déchiffrer les runes magiques de Ryze',
@@ -56,24 +66,28 @@ const LegendPage = () => {
                 name: 'Demacia', 
                 trait: 'Justice et honneur', 
                 icon: 'demacia',
+                image: demacia,
                
             },
             { 
                 name: 'Noxus', 
                 trait: 'Force et ambition', 
                 icon: 'noxus',
+                image: noxus,
           
             },
             { 
                 name: 'Ionia', 
                 trait: 'Harmonie et équilibre', 
                 icon: 'ionia',
+                image: ionia,
              
             },
             { 
                 name: 'Piltover', 
                 trait: 'Innovation et progrès', 
                 icon: 'piltover',
+                image: piltover,
                
             }
         ]
