@@ -2,9 +2,10 @@ import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import escape from '../assets/escape.jpg';
+import trone from '../assets/trone.jpeg'; 
+import home from '../assets/home.jpg';
 import '../styles/HomePage.css';
-import escape from '../assets/escape.jpg'; // Assurez-vous d'importer une image d'arrière-plan pour la section hero
-import trone from '../assets/trone.jpeg'; // Assurez-vous d'importer une image pour le jeu "Le Trône de Fer"
 
 
 const HomePage = () => {

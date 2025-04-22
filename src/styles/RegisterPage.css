@@ -1,0 +1,272 @@
+/* Styles pour la page d'inscription - version compacte sans défilement */
+:root {
+  --primary-color: #0b2852;
+  --secondary-color: #1a3c7d;
+  --accent-color: #d4af37;
+  --dark-color: #122236;
+  --light-color: #f8fafc;
+}
+
+.register-page {
+  min-height: calc(100vh); /* Ajuster en fonction de la hauteur exacte de votre navbar */
+  width: 100%;
+  background-image: url('../assets/register-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+   /* Hauteur de la navbar */
+}
+
+.register-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(11, 40, 82, 0.9), rgba(11, 40, 82, 0.7));
+}
+
+.register-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.register-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.register-card .card-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.register-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 0;
+  font-size: 1.6rem;
+}
+
+.register-subtitle {
+  color: #666;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Reduction de la taille des champs */
+.form-group {
+  margin-bottom: 0.75rem !important;
+}
+
+.input-group-text {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.register-input {
+  height: 38px;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+  border: 1px solid #ddd;
+  padding-left: 10px;
+  font-size: 0.9rem;
+}
+
+.register-input:focus {
+  box-shadow: none;
+  border-color: var(--primary-color);
+}
+
+/* Réduction des espaces pour les textes d'aide */
+.form-text {
+  font-size: 0.7rem;
+  margin-top: 2px;
+  margin-left: 3px;
+  line-height: 1.2;
+}
+
+/* Style pour l'indicateur de force du mot de passe - plus compact */
+.password-strength-bar {
+  width: 100%;
+  height: 4px;
+  background-color: #e9ecef;
+  border-radius: 2px;
+  margin: 4px 0;
+}
+
+.password-strength-progress {
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* Réduction de la taille des checkbox et texte associé */
+.terms-check {
+  font-size: 0.8rem;
+}
+
+.form-check-label {
+  line-height: 1.2;
+  padding-top: 1px;
+}
+
+/* Bouton plus compact */
+.register-btn {
+  height: 40px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.85rem;
+  box-shadow: 0 3px 10px rgba(11, 40, 82, 0.25);
+}
+
+.register-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(11, 40, 82, 0.3);
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+.register-btn:disabled {
+  background: #6c757d;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Liens - taille réduite */
+.login-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.login-link:hover {
+  color: var(--secondary-color);
+}
+
+.back-home-link {
+  color: white;
+  text-decoration: none;
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+
+.back-home-link:hover {
+  opacity: 1;
+  color: white;
+}
+
+/* Animation de chargement plus petite */
+.spinner-border {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.15em;
+}
+
+/* Validation visuelle - messages plus compacts */
+.invalid-feedback {
+  display: block;
+  font-size: 0.7rem;
+  color: #dc3545;
+  margin-top: 2px;
+  margin-left: 3px;
+  line-height: 1.2;
+}
+
+/* Ajustements spécifiques pour différentes tailles d'écran */
+@media (min-width: 992px) {
+  .register-card .card-body {
+    padding: 1.5rem 2rem;
+  }
+  
+  .register-title {
+    font-size: 1.8rem;
+  }
+  
+  .register-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .register-page {
+    padding: 1rem;
+  }
+  
+  .register-title {
+    font-size: 1.4rem;
+  }
+  
+  .register-subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .text-center.mt-4 {
+    margin-top: 0.75rem !important;
+  }
+}
+
+@media (max-width: 575px) {
+  .register-card .card-body {
+    padding: 1rem;
+  }
+  
+  .register-title {
+    font-size: 1.3rem;
+  }
+  
+  .text-center.mb-4 {
+    margin-bottom: 0.75rem !important;
+  }
+}
+
+/* Ajustements pour les écrans très petits */
+@media (max-height: 650px) {
+  .register-title {
+    font-size: 1.2rem;
+  }
+  
+  .register-subtitle {
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-group {
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .input-group-text {
+    width: 36px;
+  }
+  
+  .register-input {
+    height: 36px;
+  }
+  
+  .register-btn {
+    height: 36px;
+  }
+}

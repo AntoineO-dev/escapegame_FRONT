@@ -16,6 +16,7 @@ import SorcierPage from "./pages/SorcierPage";
 import WarcraftPage from "./pages/WarcraftPage";
 import LegendPage from "./pages/LegendPage";
 import EnigmePage from "./pages/EnigmePage";
+import AtelierPage from "./pages/AtelierPage";
 
 function App() {
     // Modifiez cette ligne pour utiliser le nom correct de la fonction
@@ -38,6 +39,7 @@ function App() {
                     <Route path="/Azeroth" element={<WarcraftPage/>} />
                     <Route path="/legende" element={<LegendPage/>} />
                     <Route path="/enigme" element={<EnigmePage/>} />
+                    <Route path="/atelier" element={<AtelierPage/>} />
                 </Routes>
                 <ToastContainer
                 position = "bottom-right"

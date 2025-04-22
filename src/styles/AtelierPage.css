@@ -1,25 +1,27 @@
-/* Styles généraux pour la page League of Legends */
+/* Styles généraux pour la page Atelier des Mécanismes */
 :root {
-  --primary-color: #0b2852; /* Bleu marine - même que les autres pages */
+  --primary-color: #0b2852; 
   --secondary-color: #1a3c7d;
-  --accent-color: #c89b3c; /* Or LoL */
-  --gold-color: #c89b3c; /* Or LoL */
+  --accent-color: #c75a28; 
+  --gold-color: #d4af37;
   --dark-color: #122236;
   --light-color: #f8fafc;
   --gray-color: #6c757d;
   
-  /* Variables spécifiques à League of Legends */
-  --demacia-blue: #0a97b0;
-  --noxus-red: #c0392b;
-  --ionia-pink: #d351ac;
-  --piltover-yellow: #eeb933;
-  --assassin-red: #e74c3c;
-  --mage-blue: #3498db;
-  --tank-green: #27ae60;
-  --support-purple: #9b59b6;
+  /* Variables spécifiques à l'atelier */
+  --copper-color: #b87333;
+  --brass-color: #b5a642;
+  --steel-color: #71797e;
+  --steam-color: #bcbdc0;
+  
+  /* Couleurs pour les compétences */
+  --logic-color: #3498db;
+  --manipulation-color: #e67e22;
+  --observation-color: #2ecc71;
+  --teamwork-color: #9b59b6;
 }
 
-.legend-page {
+.atelier-page {
   color: #333;
   font-family: 'Poppins', sans-serif;
 }
@@ -27,28 +29,27 @@
 .separator {
   width: 80px;
   height: 4px;
-  background-color: var(--accent-color);
+  background-color: var(--primary-color);
   margin-bottom: 1.5rem;
 }
 
 /* Hero Section */
-.legend-hero {
+.atelier-hero {
   position: relative;
   height: 80vh;
   min-height: 500px;
-  background-image: url('../assets/lol.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: center;
   color: white;
 }
 
-.legend-hero-overlay {
+.atelier-hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(11, 40, 82, 0.8), rgba(11, 40, 82, 0.7)); 
+  background: linear-gradient(to bottom, rgba(11, 40, 82, 0.8), rgba(11, 40, 82, 0.7)); /* Bleu marine cohérent */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,8 +93,8 @@
   text-transform: uppercase;
   letter-spacing: 1px;
   border: none;
-  background-color: var(--gold-color);
-  color: var(--dark-color);
+  background-color:var(--gold-color);
+  color: var(--light-color);
   transition: all 0.3s;
 }
 
@@ -172,46 +173,28 @@
   object-fit: cover;
 }
 
-/* Regions Section */
-.regions-section {
+/* Inventions Section */
+.inventions-section {
   background-color: #f8f9fa;
   padding: 80px 0;
   position: relative;
-  background-image: url('../assets/legend-map.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
-.regions-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.92);
-  z-index: 0;
-}
-
-.regions-section .container {
-  position: relative;
-  z-index: 1;
-}
-
-.region-card {
+.invention-card {
   border: none;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--light-color);
 }
 
-.region-card:hover {
+.invention-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.region-image-container {
+.invention-image-container {
   height: 180px;
   overflow: hidden;
   position: relative;
@@ -220,7 +203,7 @@
   justify-content: center;
 }
 
-.region-color {
+.invention-color {
   width: 100%;
   height: 100%;
   display: flex;
@@ -229,57 +212,57 @@
   position: relative;
 }
 
-/* Couleurs spécifiques pour chaque région */
-.demacia {
-  background: linear-gradient(135deg, var(--demacia-blue), black  );
+/* Couleurs spécifiques pour chaque invention */
+.mechanical {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
-.noxus {
-  background: linear-gradient(135deg, var(--noxus-red), black );
+.electrical {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
-.ionia {
-  background: linear-gradient(135deg, var(--ionia-pink), black);
+.optical {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
-.piltover {
-  background: linear-gradient(135deg, var(--piltover-yellow), black);
+.steam {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 }
 
-.region-emblem-img {
+.invention-icon-img {
   width: 60%;
-  height: 80%;
+  height: 60%;
   object-fit: contain;
-  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+  filter: brightness(0) invert(1);
   transition: transform 0.3s ease;
 }
 
-.region-card:hover .region-emblem-img {
+.invention-card:hover .invention-icon-img {
   transform: scale(1.15);
 }
 
-.region-card .card-body {
+.invention-card .card-body {
   padding: 20px;
 }
 
-.region-card .card-title {
+.invention-card .card-title {
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.region-card .card-text {
+.invention-card .card-text {
   color: #666;
   font-size: 0.9rem;
 }
 
-/* Champions Section */
-.champions-section {
-  background-color: #f8f9fa;
+/* Skills Section */
+.skills-section {
+  background-color: white;
   padding: 80px 0;
 }
 
-.champion-card {
+.skill-card {
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -290,12 +273,12 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.champion-card:hover {
+.skill-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.champion-role {
+.skill-type {
   padding: 20px;
   color: white;
   font-weight: 700;
@@ -304,42 +287,42 @@
   letter-spacing: 1px;
 }
 
-.assassin {
-  background-color: var(--assassin-red);
+.logic {
+  background-color: var(--primary-color);
 }
 
-.mage {
-  background-color: var(--mage-blue);
+.manipulation {
+  background-color: var(--primary-color);
 }
 
-.tank {
-  background-color: var(--tank-green);
+.observation {
+  background-color: var(--primary-color);
 }
 
-.support {
-  background-color: var(--support-purple);
+.teamwork {
+  background-color: var(--primary-color);
 }
 
-.champion-description {
+.skill-description {
   padding: 20px;
   flex: 1;
 }
 
-.champion-description h4 {
+.skill-description h4 {
   color: var(--primary-color);
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.champion-description p {
+.skill-description p {
   color: #666;
   margin-bottom: 0;
 }
 
 /* Challenges Section */
 .challenges-section {
-  background-color:white;
-  padding: 100px 0;
+  background-color: #f8f9fa;
+  padding: 80px 0;
 }
 
 .challenge-item {
@@ -422,13 +405,62 @@
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #fff;
+  padding: 80px 0;
+}
 
+.review-card {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.review-stars {
+  color: var(--gold-color);
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.review-content {
+  font-style: italic;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.review-author {
+  display: flex;
+  align-items: center;
+}
+
+.review-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  background-color: var(--primary-color);
+}
+
+.avatar1, .avatar2, .avatar3 {
+  background-color: var(--primary-color);
+}
+
+.review-author p {
+  margin-bottom: 0;
+  font-weight: 600;
+  color: var(--primary-color);
+}
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
   color: white;
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .cta-section h2 {
@@ -459,7 +491,7 @@
 
 /* Responsive Design */
 @media (max-width: 992px) {
-  .legend-hero {
+  .atelier-hero {
     height: 70vh;
   }
   
@@ -473,7 +505,7 @@
 }
 
 @media (max-width: 768px) {
-  .legend-hero {
+  .atelier-hero {
     height: 60vh;
   }
   
