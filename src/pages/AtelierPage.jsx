@@ -10,7 +10,13 @@ import {
     FaCogs,
     FaBrain
 } from 'react-icons/fa';
-
+import engrenage from '../assets/engrenage.webp';
+import atelier from '../assets/atelier1.jpg';
+import atelier2 from '../assets/atelier2.jpeg';
+import atelier3 from '../assets/atelier3.jpg';
+import atelier4 from '../assets/atelier4.jpg';
+import atelier5 from '../assets/atelier5.jpg';
+import atelier6 from '../assets/atelier6.avif';
 import '../styles/AtelierPage.css';
 
 const AtelierPage = () => {
@@ -43,7 +49,7 @@ const AtelierPage = () => {
         duration: 60,
         successRate: '35%',
         images: [
-           
+           atelier,
         ],
         challenges: [
             'Activer la machine à vapeur centrale',
@@ -56,24 +62,28 @@ const AtelierPage = () => {
                 name: 'Mécanismes à engrenages', 
                 trait: 'Précision et synchronisation', 
                 icon: 'mechanical',
+                image: atelier3
              
             },
             { 
                 name: 'Circuits électriques', 
                 trait: 'Puissance et conductivité', 
                 icon: 'electrical',
+                image: atelier4
            
             },
             { 
                 name: 'Appareils optiques', 
                 trait: 'Vision et perception', 
                 icon: 'optical',
+                image: atelier5
            
             },
             { 
                 name: 'Machines à vapeur', 
                 trait: 'Force et mouvement', 
                 icon: 'steam',
+                image: atelier6
                
             }
         ]
