@@ -1,0 +1,128 @@
+/* Styles pour la NavBar */
+:root {
+  --primary-color: #0b2852;
+  --secondary-color: #1a3c7d;
+  --accent-color: #d4af37;
+  --dark-color: #122236;
+  --light-color: #f8fafc;
+}
+
+/* Style de base de la navbar */
+.custom-navbar {
+  background-color: var(--primary-color);
+  transition: all 0.3s ease;
+  padding: 0.8rem 0;
+}
+
+/* Éléments de la navbar */
+.navbar-brand {
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: white !important;
+  margin: 0 8px;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--accent-color) !important;
+}
+
+.nav-link.active {
+  color: var(--accent-color) !important;
+  font-weight: 600;
+}
+
+/* Style de l'icône profil */
+.profile-icon-container {
+  position: relative;
+  margin-left: 10px;
+}
+
+.profile-icon {
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.profile-icon:hover {
+  color: var(--accent-color);
+}
+
+/* Dropdown profil */
+.profile-dropdown {
+  right: 0;
+  left: auto;
+}
+
+.profile-dropdown .dropdown-menu {
+  background-color: var(--dark-color);
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  margin-top: 10px;
+  min-width: 200px;
+}
+
+.profile-dropdown-item {
+  color: white !important;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s ease;
+  border-radius: 4px;
+}
+
+.profile-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--accent-color) !important;
+}
+
+.item-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+/* Boutons d'authentification */
+.login-btn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: white;
+}
+
+.register-btn {
+  background-color: var(--accent-color);
+  border: none;
+  color: var(--dark-color);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #c0a030;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .profile-dropdown .dropdown-menu {
+    position: absolute;
+    right: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-icon {
+    font-size: 1.5rem;
+  }
+}

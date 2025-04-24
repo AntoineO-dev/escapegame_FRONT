@@ -299,7 +299,7 @@ const HomePage = () => {
                         <h2>Prêt à relever le défi ?</h2>
                         <p className="lead mb-4">Réservez dès maintenant votre prochaine aventure avec Énigmes Évadées</p>
                         <Button variant="light" size="lg" className="me-3">Réserver une salle</Button>
-                        <Button variant="outline-light" size="lg">Commander un kit à domicile</Button>
+                        <Button variant="outline-light" size="lg">Réserver un thème à domicile</Button>
                     </motion.div>
                 </Container>
             </section>

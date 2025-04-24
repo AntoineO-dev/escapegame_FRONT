@@ -31,8 +31,8 @@ body {
   position: relative;
   height: 90vh;
   min-height: 600px;
-  background-image: url('../assets/home.jpg');
-  background-size: cover;
+  background-image: url('../assets/home.png');
+  background-size: contain;
   background-position: center;
   color: white;
 }
