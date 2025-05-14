@@ -19,12 +19,19 @@ import preuve from '../assets/preuve.jpg';
 import labo from '../assets/labo.avif';
 import secret from '../assets/secret.jpg';
 import '../styles/EnigmePage.css';
+import { useNavigate } from 'react-router-dom';
 
 const EnigmePage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate();
+
+    const handleBooking = () => {
+        const gameId = 'enigme'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
 
     // Animation variants
     const fadeIn = {
@@ -93,6 +100,7 @@ const EnigmePage = () => {
         ]
     };
 
+
     return (
         <div className="enigme-page">
             {/* Hero Section */}
@@ -125,7 +133,7 @@ const EnigmePage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>
@@ -263,81 +271,6 @@ const EnigmePage = () => {
                 </Container>
             </section>
 
-            {/* Booking Section */}
-            <section className={`booking-section py-5 ${showBookingForm ? 'show' : ''}`}>
-                <Container>
-                    <motion.div
-                        initial="hidden"
-                        animate={showBookingForm ? "visible" : "hidden"}
-                        variants={fadeIn}
-                    >
-                        <h2 className="text-center">Réserver votre enquête</h2>
-                        <div className="separator mx-auto"></div>
-                        <p className="text-center mb-5">Le temps presse, chaque minute compte pour résoudre ce mystère</p>
-
-                        <Row className="justify-content-center">
-                            <Col md={8}>
-                                <Card className="booking-card">
-                                    <Card.Body>
-                                        <Form>
-                                            <Row>
-                                                <Col md={6}>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label>Date</Form.Label>
-                                                        <Form.Control
-                                                            type="date"
-                                                            value={selectedDate}
-                                                            onChange={(e) => setSelectedDate(e.target.value)}
-                                                            required
-                                                        />
-                                                    </Form.Group>
-                                                </Col>
-                                                <Col md={6}>
-                                                    <Form.Group className="mb-3">
-                                                        <Form.Label>Nombre d'enquêteurs</Form.Label>
-                                                        <Form.Control
-                                                            type="number"
-                                                            min="2"
-                                                            max="6"
-                                                            value={participants}
-                                                            onChange={(e) => setParticipants(e.target.value)}
-                                                            required
-                                                        />
-                                                    </Form.Group>
-                                                </Col>
-                                            </Row>
-
-                                            <Form.Group className="mb-4">
-                                                <Form.Label>Horaires disponibles</Form.Label>
-                                                <div className="time-slots">
-                                                    {availableTimes.map((time) => (
-                                                        <Badge
-                                                            key={time}
-                                                            bg={selectedTime === time ? "primary" : "light"}
-                                                            text={selectedTime === time ? "light" : "dark"}
-                                                            className="time-slot-badge"
-                                                            onClick={() => setSelectedTime(time)}
-                                                        >
-                                                            {time}
-                                                        </Badge>
-                                                    ))}
-                                                </div>
-                                            </Form.Group>
-
-                                            <div className="text-center mt-4">
-                                                <Button variant="primary" type="submit" size="lg">
-                                                    Confirmer la réservation
-                                                </Button>
-                                            </div>
-                                        </Form>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        </Row>
-                    </motion.div>
-                </Container>
-            </section>
-
 
             {/* Call to Action */}
             <section className="cta-section py-5">
@@ -355,7 +288,7 @@ const EnigmePage = () => {
                             variant="light"
                             size="lg"
                             className="me-3"
-                            onClick={() => setShowBookingForm(true)}
+                            onClick={handleBooking}
                         >
                             Réserver maintenant
                         </Button>

@@ -9,12 +9,12 @@ import "../styles/RegisterPage.css";
 
 const RegisterPage = () => {
     const [user, setUser] = useState({
-        firstName: "",
-        lastName: "",
+        first_name: "",
+        last_name: "",
         email: "",
         password: "",
         confirmPassword: "",
-        phoneNumber: ""
+        phone: ""
     });
     const [isLoading, setIsLoading] = useState(false);
     const [passwordStrength, setPasswordStrength] = useState(0);
@@ -88,11 +88,11 @@ const RegisterPage = () => {
         setIsLoading(true);
         try {
             await AuthService.register({
-                firstName: user.firstName,
-                lastName: user.lastName,
+                first_name: user.first_name,
+                last_name: user.last_name,
                 email: user.email,
                 password: user.password,
-                phoneNumber: user.phoneNumber
+                phone: user.phone
             });
             toast.success("Inscription réussie ! Vous pouvez maintenant vous connecter");
             navigate("/login");
@@ -145,8 +145,8 @@ const RegisterPage = () => {
                                                             <Form.Control 
                                                                 type="text" 
                                                                 placeholder="Prénom" 
-                                                                name="firstName" 
-                                                                value={user.firstName} 
+                                                                name="first_name" 
+                                                                value={user.first_name} 
                                                                 onChange={handleChange}
                                                                 className="form-control register-input"
                                                                 required
@@ -163,8 +163,8 @@ const RegisterPage = () => {
                                                             <Form.Control 
                                                                 type="text" 
                                                                 placeholder="Nom" 
-                                                                name="lastName" 
-                                                                value={user.lastName} 
+                                                                name="last_name" 
+                                                                value={user.last_name} 
                                                                 onChange={handleChange}
                                                                 className="form-control register-input"
                                                                 required
@@ -199,8 +199,8 @@ const RegisterPage = () => {
                                                     <Form.Control 
                                                         type="tel" 
                                                         placeholder="Numéro de téléphone" 
-                                                        name="phoneNumber" 
-                                                        value={user.phoneNumber} 
+                                                        name="phone" 
+                                                        value={user.phone} 
                                                         onChange={handleChange}
                                                         className="form-control register-input"
                                                         pattern="[0-9]{10}"

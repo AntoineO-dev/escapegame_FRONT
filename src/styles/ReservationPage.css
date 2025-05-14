@@ -1,0 +1,549 @@
+/* Styles pour la page de réservation */
+:root {
+  --primary-color: #0b2852;
+  --secondary-color: #1a3c7d;
+  --accent-color: #d4af37;
+  --dark-color: #122236;
+  --light-color: #f8fafc;
+}
+
+/* Layout de base */
+.reservation-page {
+  min-height: 90vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(18, 34, 54, 0.85), rgba(11, 40, 82, 0.9)), url('/images/reservation-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+
+}
+
+.reservation-overlay {
+  width: 100%;
+  min-height: calc(100vh - 76px);
+
+}
+
+.reservation-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Styles de titre et séparateurs */
+.reservation-title {
+  color: var(--accent-color);
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.separator {
+  width: 80px;
+  height: 4px;
+  background-color: var(--accent-color);
+  margin-bottom: 2rem;
+}
+
+/* Cartes de contenu */
+.reservation-card,
+.reservation-summary-card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  background-color: rgba(255, 255, 255, 0.98);
+  height: 100%;
+}
+
+.reservation-card .card-body,
+.reservation-summary-card .card-body {
+  padding: 1.8rem;
+}
+
+.reservation-card h3,
+.reservation-summary-card h3 {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid rgba(11, 40, 82, 0.1);
+  padding-bottom: 0.75rem;
+}
+
+/* Styles des champs de formulaire */
+.reservation-label {
+  font-weight: 600;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon-spacing {
+  margin-right: 8px;
+  color: var(--accent-color);
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 0.25rem rgba(26, 60, 125, 0.25);
+}
+
+/* Styles du DatePicker */
+.react-datepicker-wrapper {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.react-datepicker {
+  font-family: 'Poppins', sans-serif !important;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.react-datepicker__header {
+  background-color: var(--primary-color);
+  border-bottom: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  color: white;
+}
+
+.react-datepicker__navigation {
+  top: 12px;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  color: var(--dark-color);
+  font-weight: bold;
+}
+
+.react-datepicker__day:hover {
+  background-color: rgba(26, 60, 125, 0.1);
+  border-radius: 50%;
+}
+
+.react-datepicker__month-container {
+  background-color: white;
+}
+
+.react-datepicker__day--disabled {
+  color: #ccc;
+}
+
+.datepicker-input {
+  height: 48px;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+  padding: 0.5rem 1rem;
+}
+
+/* Styles des créneaux horaires */
+.time-slots-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  max-height: 210px;
+  overflow-y: auto;
+  padding: 5px;
+  padding-right: 10px;
+}
+
+.time-slots-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.time-slots-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.time-slots-container::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 10px;
+}
+
+.time-slot-btn {
+  min-width: 80px;
+  height: 40px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.time-slot-btn.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.time-slot-btn.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.time-slot-btn.btn-outline-primary:hover {
+  background-color: rgba(11, 40, 82, 0.1);
+  color: var(--primary-color);
+}
+
+.time-slot-btn:focus {
+  box-shadow: 0 0 0 0.25rem rgba(26, 60, 125, 0.25);
+}
+
+/* Styles du sélecteur de participants */
+.participants-selector {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+
+.participants-count {
+  min-width: 60px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.participants-selector .btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 0;
+}
+
+.participants-selector .btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.participants-selector .btn-outline-primary:hover:not(:disabled) {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.participants-selector .btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Styles du bouton de soumission */
+.reservation-submit-btn {
+  height: 50px;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  box-shadow: 0 4px 15px rgba(11, 40, 82, 0.3);
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reservation-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 40, 82, 0.35);
+  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+}
+
+.reservation-submit-btn:disabled {
+  background: #6c757d;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Styles du résumé de réservation */
+.game-image-container {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  margin-bottom: 1.2rem;
+}
+
+.game-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.game-title {
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.game-description {
+  color: #6c757d;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.reservation-details {
+  background-color: rgba(248, 250, 252, 0.7);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #495057;
+}
+
+.detail-value {
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+.difficulty-level {
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.reservation-divider {
+  margin: 15px 0;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.price-item {
+  font-size: 1.05rem;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
+
+.detail-value.price {
+  color: var(--accent-color);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+/* Styles des informations importantes */
+.important-notes {
+  background-color: rgba(26, 60, 125, 0.05);
+  border-left: 4px solid var(--accent-color);
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  margin-top: 1.5rem;
+}
+
+.important-notes h5 {
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.important-list {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.important-list li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #495057;
+}
+
+.important-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Bouton de retour */
+.back-button {
+  color: white;
+  text-decoration: none;
+  padding: 0;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.back-button:hover {
+  color: var(--accent-color);
+  transform: translateX(-3px);
+}
+
+.back-button svg {
+  margin-right: 6px;
+}
+
+/* Spinner de chargement */
+.spinner-border {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-width: 0.2rem;
+}
+
+/* Animation de transition */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Styles d'alerte */
+.alert {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+/* Styles responsives */
+@media (max-width: 991px) {
+  .reservation-container {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  
+  .reservation-card .card-body,
+  .reservation-summary-card .card-body {
+    padding: 1.5rem;
+  }
+  
+  .reservation-title {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .reservation-page {
+    margin-top: 60px;
+  }
+
+  .reservation-overlay {
+    min-height: calc(100vh - 60px);
+  }
+
+  .reservation-title {
+    font-size: 1.6rem;
+  }
+  
+  .time-slots-container {
+    max-height: 180px;
+  }
+  
+  .game-image-container {
+    height: 160px;
+  }
+  
+  .important-list li {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .reservation-title {
+    font-size: 1.4rem;
+  }
+  
+  .separator {
+    width: 60px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .reservation-card .card-body,
+  .reservation-summary-card .card-body {
+    padding: 1.25rem;
+  }
+  
+  .time-slot-btn {
+    min-width: 70px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  
+  .participants-selector .btn {
+    width: 38px;
+    height: 38px;
+  }
+  
+  .reservation-submit-btn {
+    height: 46px;
+    font-size: 0.9rem;
+  }
+  
+  .game-title {
+    font-size: 1.3rem;
+  }
+  
+  .game-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .time-slot-btn {
+    min-width: 65px;
+    height: 34px;
+    font-size: 0.85rem;
+  }
+  
+  .time-slots-container {
+    gap: 8px;
+  }
+  
+  .reservation-card h3,
+  .reservation-summary-card h3 {
+    font-size: 1.3rem;
+  }
+}

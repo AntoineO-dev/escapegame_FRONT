@@ -24,6 +24,8 @@ const TronePage = () => {
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
 
+    
+
     // Animation variants
     const fadeIn = {
         hidden: { opacity: 0, y: 20 },
@@ -66,6 +68,8 @@ const TronePage = () => {
         ]
     };
 
+  
+
     return (
         <div className="trone-page">
             {/* Hero Section */}
@@ -98,7 +102,7 @@ const TronePage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={() => na}
                             >
                                 Réserver maintenant
                             </Button>

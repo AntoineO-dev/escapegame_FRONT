@@ -30,7 +30,7 @@ const NavBar = () => {
               <NavDropdown.Divider />
               <NavDropdown.Item as={Link} to="/games">Tous nos jeux</NavDropdown.Item>
             </NavDropdown>
-            <NavDropdown title="Jeux à domicile" id="home-games-dropdown">
+            <NavDropdown title="Escape à domicile" id="home-games-dropdown">
               <NavDropdown.Item as={Link} to="/Azeroth">La Quête d'Azeroth</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/legende">La Légende de l'Arène</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/enigme">Enigmes de l'Absence</NavDropdown.Item>
