@@ -45,8 +45,42 @@ const mockGameData = {
     minParticipants: 3,
     maxParticipants: 8
   },
-  // Ajoutez d'autres jeux au besoin
+
+  jedi: {
+    id: "jedi",
+    name: "La Quête du Jedi",
+    shortDescription: "Devenez le Jedi que vous êtes destiné à être.",
+    difficulty: 2,
+    duration: 90,
+    price: 20,
+    minParticipants: 2,
+    maxParticipants: 5
+},
+
+  sorcier: {
+    id: "sorcier",
+    name: "L'Épreuve des Sorciers",
+    shortDescription: "Testez vos compétences magiques dans cette épreuve.",
+    difficulty: 5,
+    duration: 120,
+    price: 40,
+    minParticipants: 4,
+    maxParticipants: 10
+  },
+
+  warcraft: {
+    id: "warcraft",
+    name: "Aventure dans le Monde de Warcraft",
+    shortDescription: "Plongez dans l'univers épique de Warcraft.",
+    difficulty: 3,
+    duration: 90,
+    price: 35,
+    minParticipants: 2,
+    maxParticipants: 6
+  },
+
 };
+  
 
 const ReservationPage = () => {
   const { gameId } = useParams();

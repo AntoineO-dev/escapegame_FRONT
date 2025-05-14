@@ -11,7 +11,12 @@ function getAllescapeGames () {
     return axios.get(`${API_URL}/escapegames`)
     }
 
+    function getEscapeGameById(id) {
+      return axios.get(`${API_URL}/escapegames/${id}`);
+    }
+
 export default {
     getEscapeGamesByStatus,
-    getAllescapeGames
+    getAllescapeGames,
+    getEscapeGameById
 };

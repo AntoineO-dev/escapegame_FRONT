@@ -17,14 +17,20 @@ import {
     GiDeerHead
 } from 'react-icons/gi';
 import '../styles/TronePage.css';
+import { useNavigate } from 'react-router-dom';
 
 const TronePage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate(); // Utilisez useNavigate pour la navigation
 
-    
+    const handleBooking = () => {
+        const gameId = 'trone'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
+
 
     // Animation variants
     const fadeIn = {
@@ -102,7 +108,7 @@ const TronePage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => na}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>

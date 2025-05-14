@@ -50,7 +50,7 @@ const HomePage = () => {
                             <h1>Bienvenue chez Énigmes Évadées</h1>
                             <p className="lead">Plongez dans des aventures immersives où mystères et défis vous attendent</p>
                             <Button variant="light" size="lg" className="hero-btn me-3">Découvrir nos jeux</Button>
-                            <Button variant="outline-light" size="lg" className="hero-btn">Réserver</Button>
+                           
                         </motion.div>
                     </Container>
                 </div>

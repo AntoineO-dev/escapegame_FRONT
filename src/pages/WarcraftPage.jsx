@@ -16,12 +16,19 @@ import nightElf from '../assets/wow3.webp';
 import undead from '../assets/wow4.jpg';
 import image from '../assets/wow6.jpeg';
 import '../styles/WarcraftPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const WarcraftPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate();
+
+    const handleBooking = () => {
+        const gameId = 'warcraft'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
 
     // Animation variants
     const fadeIn = {
@@ -119,7 +126,7 @@ const WarcraftPage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>
@@ -341,7 +348,7 @@ const WarcraftPage = () => {
                             variant="light"
                             size="lg"
                             className="me-3"
-                            onClick={() => setShowBookingForm(true)}
+                            onClick={handleBooking}
                         >
                             Réserver maintenant
                         </Button>

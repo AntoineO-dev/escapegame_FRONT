@@ -18,12 +18,21 @@ import atelier4 from '../assets/atelier4.jpg';
 import atelier5 from '../assets/atelier5.jpg';
 import atelier6 from '../assets/atelier6.avif';
 import '../styles/AtelierPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const AtelierPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate(); // Utilisation de useNavigate pour la navigation
+
+    
+    const handleBooking = () => {
+        const gameId = 'atelier'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
+
 
     // Animation variants
     const fadeIn = {
@@ -121,7 +130,7 @@ const AtelierPage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>

@@ -19,12 +19,19 @@ import poufsouffle from '../assets/poufsouffle.webp';
 import serdaigle from '../assets/serdaigle.webp';
 import serpentard from '../assets/serpentard.webp';
 import '../styles/SorcierPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const SorcierPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate();
+
+    const handleBooking = () => {
+        const gameId = 'sorcier'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
 
     // Animation variants
     const fadeIn = {
@@ -101,7 +108,7 @@ const SorcierPage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>
@@ -338,7 +345,7 @@ const SorcierPage = () => {
                             variant="light"
                             size="lg"
                             className="me-3"
-                            onClick={() => setShowBookingForm(true)}
+                            onClick={handleBooking}
                         >
                             Réserver maintenant
                         </Button>

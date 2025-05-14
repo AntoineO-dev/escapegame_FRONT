@@ -17,12 +17,21 @@ import starwars2 from '../assets/starwars2.jpg';
 import starwars3 from '../assets/starwars3.webp';
 import fondjedi from '../assets/fondjedipage.jpeg';
 import '../styles/JediPage.css';
+import { useNavigate } from 'react-router-dom';
 
 const JediPage = () => {
     const [showBookingForm, setShowBookingForm] = useState(false);
     const [selectedDate, setSelectedDate] = useState('');
     const [selectedTime, setSelectedTime] = useState('');
     const [participants, setParticipants] = useState(2);
+    const navigate = useNavigate();
+
+    
+    const handleBooking = () => {
+        const gameId = 'jedi'; // ID de l'escape game
+        navigate(`/reservation/${gameId}`)
+    }; 
+
 
     // Animation variants
     const fadeIn = {
@@ -99,7 +108,7 @@ const JediPage = () => {
                                 variant="light"
                                 size="lg"
                                 className="mt-4 book-now-btn"
-                                onClick={() => setShowBookingForm(!showBookingForm)}
+                                onClick={handleBooking}
                             >
                                 Réserver maintenant
                             </Button>

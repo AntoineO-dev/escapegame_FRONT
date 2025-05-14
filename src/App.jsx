@@ -18,6 +18,7 @@ import LegendPage from "./pages/LegendPage";
 import EnigmePage from "./pages/EnigmePage";
 import AtelierPage from "./pages/AtelierPage";
 import ReservationPage from "./pages/ReservationPage";
+import ReservationSucessPage from "./pages/ReservationSuccessPage";
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
                     <Route path="/enigme" element={<EnigmePage/>} />
                     <Route path="/atelier" element={<AtelierPage/>} />
                     <Route path="/reservation/:gameId" element={<ReservationPage/>} />
+                    <Route path="/reservation/success" element={<ReservationSucessPage/>} />
+                    {/* Ajoutez d'autres routes ici */}
                     
          
                 </Routes>

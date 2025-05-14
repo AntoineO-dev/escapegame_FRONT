@@ -1,0 +1,242 @@
+/* src/styles/ReservationSuccessPage.css */
+.reservation-success-page {
+  min-height: calc(100vh - 76px);
+  width: 100%;
+  background-image: linear-gradient(rgba(18, 34, 54, 0.9), rgba(11, 40, 82, 0.95)), url('/images/success-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  margin-top: 76px; /* Hauteur de la navbar */
+  display: flex;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.success-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.98);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.success-icon {
+  font-size: 5rem;
+  color: #28a745;
+  margin-bottom: 1.5rem;
+}
+
+.success-card h1 {
+  color: #0b2852;
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.success-card .lead {
+  font-size: 1.2rem;
+  color: #495057;
+  margin-bottom: 2rem;
+}
+
+/* Styles pour les éléments d'information */
+.reservation-info {
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.info-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.info-icon {
+  font-size: 2.2rem;
+  color: #1a3c7d;
+  margin-right: 1.5rem;
+}
+
+.info-item h5 {
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 0.3rem;
+}
+
+.info-item p {
+  font-size: 1.1rem;
+  color: #495057;
+  margin-bottom: 0;
+}
+
+/* Message important */
+.important-message {
+  background-color: rgba(26, 60, 125, 0.05);
+  border-left: 4px solid #d4af37;
+  padding: 15px;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+
+.important-message p {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #495057;
+}
+
+.important-message p:last-child {
+  margin-bottom: 0;
+}
+
+/* Boutons */
+.success-card .btn {
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.success-card .btn-primary {
+  background-color: #0b2852;
+  border-color: #0b2852;
+}
+
+.success-card .btn-primary:hover {
+  background-color: #1a3c7d;
+  border-color: #1a3c7d;
+}
+
+.success-card .btn-outline-primary {
+  color: #0b2852;
+  border-color: #0b2852;
+}
+
+.success-card .btn-outline-primary:hover {
+  background-color: rgba(11, 40, 82, 0.1);
+  color: #0b2852;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animated-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .success-card h1 {
+    font-size: 2.2rem;
+  }
+  
+  .success-icon {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .reservation-success-page {
+    margin-top: 60px; /* Ajustement pour navbar mobile */
+    padding: 20px 0;
+  }
+  
+  .success-card {
+    padding: 1.5rem;
+  }
+  
+  .success-card h1 {
+    font-size: 1.8rem;
+  }
+  
+  .success-icon {
+    font-size: 3.5rem;
+  }
+  
+  .info-icon {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+  }
+  
+  .info-item h5 {
+    font-size: 1rem;
+  }
+  
+  .info-item p {
+    font-size: 1rem;
+  }
+  
+  .important-message {
+    padding: 12px;
+  }
+  
+  .success-card .btn {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .success-card {
+    padding: 1.2rem;
+  }
+  
+  .success-card h1 {
+    font-size: 1.6rem;
+  }
+  
+  .success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .success-card .lead {
+    font-size: 1.1rem;
+  }
+  
+  .info-item {
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .info-icon {
+    margin-right: 0;
+    margin-bottom: 0.8rem;
+  }
+  
+  .d-flex.justify-content-center {
+    flex-direction: column;
+  }
+  
+  .success-card .btn {
+    margin-bottom: 0.8rem;
+    width: 100%;
+  }
+  
+  .success-card .btn:last-child {
+    margin-bottom: 0;
+  }
+}
